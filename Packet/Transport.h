@@ -7,8 +7,8 @@
 typedef struct PortAddress {
 	uint16_t address;
 	PortAddress();
-	PortAddress(uint16_t address);
-	bool operator<(const PortAddress& o) const;
+    PortAddress(const uint16_t address);
+    bool operator<(const PortAddress& o) const;
 	bool operator==(const PortAddress& o) const;
 	operator std::string() const;
 	friend std::ostream& operator<<(std::ostream& os, const PortAddress& port);

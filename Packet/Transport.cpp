@@ -2,10 +2,12 @@
 
 #ifdef _WIN32
 #include <WinSock2.h>
+#elif __linux
+#include <arpa/inet.h>
 #endif
 
 PortAddress::PortAddress() : address(0) {}
-PortAddress::PortAddress(uint16_t address) : address(htons(address)) {}
+PortAddress::PortAddress(const uint16_t address) : address(htons(address)) {}
 bool PortAddress::operator<(const PortAddress& o) const {
 	return address < o.address;
 }

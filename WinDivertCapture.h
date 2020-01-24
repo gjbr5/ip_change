@@ -1,5 +1,6 @@
 #pragma once
 #include "Capture.h"
+#ifdef __WIN32
 #include <string>
 #include <Windows.h>
 #include "windivert.h"
@@ -14,3 +15,4 @@ public:
 	~WinDivertCapture();
 	virtual void next() final;
 };
+#endif

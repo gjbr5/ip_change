@@ -4,6 +4,8 @@
 #pragma comment(lib, "ws2_32.lib")
 #include <WinSock2.h>
 #include <WS2tcpip.h>
+#elif __linux
+#include <arpa/inet.h>
 #endif
 
 IPv4Address::IPv4Address() : address(0) {}
@@ -28,8 +30,8 @@ std::ostream& operator<<(std::ostream& os, const IPv4Address& ip) {
 void IPHeader::calcChecksum() {
 	checksum = 0;
 	uint16_t* data = reinterpret_cast<uint16_t*>(this);
-	size_t len = hdr_len << 2;
-	int i = len / 2;
+    int len = hdr_len << 2;
+    int i = len / 2;
 
 	uint16_t result = 0;
 	if (len & 1)

@@ -1,5 +1,5 @@
-#ifdef _WIN32
 #include "WinDivertCapture.h"
+#ifdef _WIN32
 #include <iostream>
 #include <string>
 

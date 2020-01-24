@@ -20,5 +20,5 @@ public:
 	void addListener(CaptureListener* listener);
 	void removeListener(CaptureListener* listener);
 	virtual void next() = 0;
-	~Capture();
+    virtual ~Capture();
 };

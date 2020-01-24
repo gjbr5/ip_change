@@ -1,6 +1,10 @@
 #pragma once
 #include <cstdint>
 
+#ifdef __linux
+#include <sys/types.h>
+#endif
+
 class CaptureListener
 {
 public:

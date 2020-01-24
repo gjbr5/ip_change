@@ -1,6 +1,10 @@
 #pragma once
 #include <cstdint>
 
+#ifdef __linux
+#include <sys/types.h>
+#endif
+
 typedef struct MacAddress
 {
 	static constexpr size_t ADDRLEN = 6;
