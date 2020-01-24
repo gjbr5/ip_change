@@ -1,6 +1,6 @@
 #pragma once
 #include "Capture.h"
-#ifdef __WIN32
+#ifdef _WIN32
 #include <string>
 #include <Windows.h>
 #include "windivert.h"
